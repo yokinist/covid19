@@ -76,9 +76,9 @@
             />
           </div>
           <div class="TelLink">
-            <a href="tel:0570550571"
-              ><img src="/flow/sp/sp_flow_tel_01@2x.png" alt="0570-550571"
-            /></a>
+            <a href="tel:0570550571">
+              <img src="/flow/sp/sp_flow_tel_01@2x.png" alt="0570-550571" />
+            </a>
           </div>
           <div class="mt-4">
             <a href="#consult">
@@ -185,7 +185,8 @@
           <div id="not_required" class="mx-2">
             <img
               src="/flow/sp/sp_flow_06_03@2x.png"
-              alt="新型コロナ外来受診が不要と判断された場合／自宅で安静に過ごす・一般の医療機関を受診／症状が良くならない場合は新型コロナ受診相談窓口に相談"/>
+              alt="新型コロナ外来受診が不要と判断された場合／自宅で安静に過ごす・一般の医療機関を受診／症状が良くならない場合は新型コロナ受診相談窓口に相談"
+            />
           </div>
         </div>
         <div id="hospitalized" class="Flow-Card-Parts">
