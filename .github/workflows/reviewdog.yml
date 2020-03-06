@@ -7,14 +7,32 @@ on:
 
 jobs:
   eslint:
-    name: runner / eslint
-    runs-on: ubuntu-18.04
+    name: eslint
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
 
-      - name: Run eslint with reviewdog
-        uses: reviewdog/action-eslint@v1.0.0
-          with:
-            github_token: ${{ secrets.github_token }}
-            reporter: github-pr-review
-            eslint_flags: './**/*.{js,ts,vue}'
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+
+      - name: Cache dependencies
+        uses: actions/cache@v1
+        with:
+          path: ~/.cache/yarn
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - run: yarn install --frozen-lockfile
+
+      - name: eslint review
+        uses: reviewdog/action-eslint@v1
+        with:
+          github_token: ${{ secrets.github_token }}
+          reporter: github-pr-review
+          eslint_flags: './**/*.{vue,ts,js}'
+
+      - name: eslint
+        run: yarn lint
