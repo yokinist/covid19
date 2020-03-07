@@ -157,6 +157,9 @@ export default {
           ],
           yAxes: [
             {
+
+
+              
               location: 'bottom',
               stacked: true,
               gridLines: {
